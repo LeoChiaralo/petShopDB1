@@ -65,7 +65,7 @@ body {
 #bodyContainer {
     height: 100%;
     padding: 5rem;
-    background-image: url(/img/template.jpg);
+    background-image: url(../img/template.jpg);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: right;
