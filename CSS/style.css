@@ -1,0 +1,159 @@
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  width: 100vw;
+  background-color: #f39332;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+#header p {
+  font-size: 3rem;
+  font-family: "MuseoModerno", cursive;
+  font-weight: 700;
+  color: white;
+  margin-left: 20px;
+}
+
+#btnContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-family: "MuseoModerno", cursive;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.btn:hover {
+  border-bottom: 3px solid white;
+  border-radius: 4px;
+}
+
+.btn a {
+  text-decoration: none;
+
+}
+
+.btn a:visited {
+  color: white;
+}
+
+#banner {
+  display: flex;
+}
+
+#bannerImg {
+  width: 50vw;
+  height: auto;
+}
+
+#bannerText {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bannerText p {
+  font-size: 3rem;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-weight: bold;
+}
+
+#bannerText span {
+  font-family: "MuseoModerno", cursive;
+  color: #f39332;
+}
+
+#bodyContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5rem;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(243,147,50,1) 30%);
+  /* background-color: #f39332; */
+  padding: 5rem;
+}
+
+#titleInfo {
+  font-size: 2rem;
+  font-family: "MuseoModerno", cursive;
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#textInfo {
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+#infoContainer {
+  display: flex;
+  gap: 5rem;
+  text-align: center;
+}
+
+.infoBloco {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.titleDescription {
+  font-size: 1.8rem;
+  font-family: "Pathway Gothic One", sans-serif;
+  color: white;
+}
+
+.infoBloco p {
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+#footer {
+  background-color: #f39332;
+  text-align: center;
+  padding: 1rem;
+}
+
+#footer p {
+  font-size: 0.9rem;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-weight: bold;
+  color: white;
+}
