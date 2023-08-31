@@ -21,7 +21,7 @@ app.get("/home", (req, res) => {
 app.post("/users", async (req, res) => {
   const novoUser = {
     nome: req.body.name,
-    sobrenome: req.body.lastname,
+    telefone: req.body.tel,
     email: req.body.email,
     texto: req.body.areaTexto,
   };
