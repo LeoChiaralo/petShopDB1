@@ -14,6 +14,9 @@ const app = express();
 
 app.use(express.json());
 
+app.set("view engine", "ejs");
+app.set("views", "src/views");
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -49,7 +52,7 @@ app.post("/users", async (req, res) => {
       text: "Olá, PETlover! Formulário enviado com sucesso. Agradecemos pela sua atenção!!",
     });
 
-    res.status(201).json(user);
+    res.render("confirm");
   } catch (error) {
     res.status(500).send(error.message);
   }
