@@ -10,5 +10,3 @@ connectToDatabase();
 
 // Importando express.js
 require("./modules/express");
-
-require("./modules/body-parser");
