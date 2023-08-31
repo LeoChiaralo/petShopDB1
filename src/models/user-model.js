@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema({
   texto: {
     type: String,
     required: true,
+    minlength: 10,
   },
 });
 

@@ -1,15 +1,18 @@
 // Importando Mongoose
 const mongoose = require("mongoose");
 
-const connectToDataBase = async () => {
+const connectToDatabase = async () => {
   await mongoose
     .connect(
       `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@petshop.jwzjur6.mongodb.net/?retryWrites=true&w=majority`
     )
-    .then(console.log("Conexão efetuada com sucesso!"))
+    .then(console.log("Conexão ao banco de dados realizada com sucesso!"))
     .catch((error) => {
-      console.log("Ocorreu um erro ao realizar a conexão!Erro: ", error);
+      console.log(
+        "Ocorreu um error ao se conectar com o banco de dados: ",
+        error
+      );
     });
 };
 
-module.exports = connectToDataBase;
+module.exports = connectToDatabase;
