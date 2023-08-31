@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const connectToDatabase = async () => {
   await mongoose
     .connect(
-      `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@petshop.jwzjur6.mongodb.net/?retryWrites=true&w=majority`
+      `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@form.xprapho.mongodb.net/?retryWrites=true&w=majority`
     )
     .then(console.log("Conexão ao banco de dados realizada com sucesso!"))
     .catch((error) => {
