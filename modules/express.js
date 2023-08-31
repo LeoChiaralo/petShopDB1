@@ -7,6 +7,9 @@ const UserModel = require("../src/models/user-model");
 // Importando BodyParser
 const bodyParser = require("body-parser");
 
+// Importando Nodemailer
+const nodemailer = require("nodemailer");
+
 const app = express();
 
 app.use(express.json());
@@ -28,6 +31,23 @@ app.post("/users", async (req, res) => {
 
   try {
     const user = UserModel.create(novoUser);
+
+    const transport = nodemailer.createTransport({
+      host: "smtp.office365.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: "petisco@hotmail.com",
+        pass: `${process.env.EMAIL_PASSWORD}`,
+      },
+    });
+
+    transport.sendMail({
+      from: "PETisco <petisco@hotmail.com>",
+      to: req.body.email,
+      subject: "Confirmação de form",
+      text: "Olá, Petlover! Formulário enviado com sucesso. Agradecemos pela sua atenção!!",
+    });
 
     res.status(201).json(user);
   } catch (error) {
