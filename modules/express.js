@@ -20,10 +20,6 @@ app.set("views", "src/views");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get("/home", (req, res) => {
-  res.status(200).send("<h1>hello world</h1>");
-});
-
 app.post("/users", async (req, res) => {
   const novoUser = {
     nome: req.body.name,
