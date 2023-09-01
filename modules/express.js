@@ -20,6 +20,8 @@ app.set("views", "src/views");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use("/", express.static(__dirname + "/../public"));
+
 app.post("/users", async (req, res) => {
   const novoUser = {
     nome: req.body.name,

@@ -15,14 +15,17 @@ form.addEventListener("submit", (event) => {
 
   if (telInput.value === "" || !isTelValid(telInput.value)) {
     alert("Por favor, informe o seu telefone");
+    return;
   }
 
   if (emailInput.value === "" || !isEmailValid(emailInput.value)) {
     alert("Por favor, informe o seu email!");
+    return;
   }
 
   if (textInput.value === "") {
     alert("Por favor, informe a sua dúvida");
+    return;
   }
 
   form.submit();
@@ -30,7 +33,9 @@ form.addEventListener("submit", (event) => {
 
 // Função regex para validar telefone
 function isTelValid(tel) {
-  const telRegex = new RegExp(/^[0-9]{2,}+\s+[0-9]{5,}+[0-9]{4,}$/);
+  const telRegex = new RegExp(
+    /^\([1-9]{2}\) [9]{0,1}[6-9]{1}[0-9]{3}\-[0-9]{4}$/
+  );
 
   if (telRegex.test(tel)) {
     return true;
