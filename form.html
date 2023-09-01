@@ -47,42 +47,34 @@
         </p>
         <form action="http://localhost:8080/users" method="post" id="form">
           <div id="nameContainer">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Nome"
-              required
-            />
+            <input type="text" name="name" id="username" placeholder="Nome" />
             <input
               type="tel"
               name="tel"
-              id="tel"
+              id="usertel"
               pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
               placeholder="Telefone (99-99999-9999)"
-              required
             />
           </div>
           <input
             type="email"
-            id="email"
+            id="useremail"
             name="email"
             placeholder="Digite seu e-mail"
-            required
           />
           <textarea
             name="areaTexto"
-            id="areaTexto"
+            id="text"
             cols="30"
             rows="10"
             placeholder="Diga-nos a sua dúvida..."
             minlength="10"
             maxlength="100"
-            required
           ></textarea>
           <input type="submit" value="Enviar" />
         </form>
       </div>
     </div>
+    <script src="./js/scripts.js"></script>
   </body>
 </html>
