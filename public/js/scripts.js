@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
   }
 
   if (emailInput.value === "" || !isEmailValid(emailInput.value)) {
-    alert("Por favor, informe o seu email!");
+    alert("Por favor, informe o seu e-mail!");
     return;
   }
 

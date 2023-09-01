@@ -10,6 +10,9 @@ const bodyParser = require("body-parser");
 // Importando Nodemailer
 const nodemailer = require("nodemailer");
 
+// Importando Yup
+const yup = require("yup");
+
 const app = express();
 
 app.use(express.json());
@@ -23,6 +26,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", express.static(__dirname + "/../public"));
 
 app.post("/users", async (req, res) => {
+  const schema = yup.object().shape({
+    nome: yup
+      .string("Preencha o campo nome!")
+      .required("Preencha o campo nome!"),
+    telefone: yup
+      .string("Preencha o campo telefone!")
+      .required("Preencha o campo telefone!"),
+    email: yup
+      .string("Preencha o campo e-mail")
+      .required("Preencha o campo e-mail!")
+      .email("Preencha o campo com um e-mail válido!"),
+    texto: yup
+      .string("Preencha o campo de texto!")
+      .required("Preencha o campo de texto!")
+      .min(10, "O campo precisar ter no mínimo 10 caracteres!"),
+  });
+
   const novoUser = {
     nome: req.body.name,
     telefone: req.body.tel,
@@ -31,6 +51,8 @@ app.post("/users", async (req, res) => {
   };
 
   try {
+    await schema.validate(novoUser);
+
     const user = UserModel.create(novoUser);
 
     const transport = nodemailer.createTransport({
