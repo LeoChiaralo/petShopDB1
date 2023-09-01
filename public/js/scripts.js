@@ -14,7 +14,7 @@ form.addEventListener("submit", (event) => {
   }
 
   if (telInput.value === "" || !isTelValid(telInput.value)) {
-    alert("Por favor, informe o seu telefone");
+    alert("Por favor, informe o seu telefone!");
     return;
   }
 
@@ -24,7 +24,7 @@ form.addEventListener("submit", (event) => {
   }
 
   if (textInput.value === "") {
-    alert("Por favor, informe a sua dúvida");
+    alert("Por favor, informe a sua dúvida!");
     return;
   }
 
